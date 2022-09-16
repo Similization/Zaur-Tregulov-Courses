@@ -1,12 +1,9 @@
 package com.simis.rest.controller;
 
 import com.simis.rest.entity.Employee;
-import com.simis.rest.exception_handling.EmployeeIncorrectData;
 import com.simis.rest.exception_handling.NoSuchEmployeeException;
 import com.simis.rest.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,8 +16,7 @@ public class MyRESTController {
 
     @GetMapping("/employees")
     public List<Employee> showAllEmployees() {
-        List<Employee> allEmployees = employeeService.getAllEmployees();
-        return allEmployees;
+        return employeeService.getAllEmployees();
     }
 
     @GetMapping("/employees/{id}")
